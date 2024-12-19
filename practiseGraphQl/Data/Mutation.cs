@@ -41,18 +41,22 @@ namespace practiseGraphQl.Data
 
         [Serial]
         public async Task<Client?> InsertClient(
-            [Service] BlogDbContext context, Client model)
+            [Service] BlogDbContext context,
+            string name,
+            string address,
+            string email,
+            string phone)
         {
             var client = new Client
             {
-                Name = model.Name,
-                Address = model.Address,
-                Phone = model.Phone,
-                Email = model.Email
+                Name = name,
+                Address = address,
+                Phone = phone,
+                Email = email
             };
             context.Clients.Add(client);
             await context.SaveChangesAsync();
-            return model;
+            return client;
         }
 
         [Serial]
@@ -88,18 +92,23 @@ namespace practiseGraphQl.Data
 
         [Serial]
         public async Task<Driver?> InsertDriver(
-            [Service] BlogDbContext context, Driver model)
+            [Service] BlogDbContext context,
+            string name,
+            int licenseNumber,
+            string phone,
+            DateTime dateOfHire
+            )
         {
             var driver = new Driver
             {
-                Name = model.Name,
-                LicenseNumber = model.LicenseNumber,
-                Phone = model.Phone,
-                DateOfHire = model.DateOfHire
+                Name = name,
+                LicenseNumber = licenseNumber,
+                Phone = phone,
+                DateOfHire = dateOfHire
             };
             context.Drivers.Add(driver);
             await context.SaveChangesAsync();
-            return model;
+            return driver;
         }
 
 
@@ -138,19 +147,25 @@ namespace practiseGraphQl.Data
 
         [Serial]
         public async Task<Vehicle?> InsertVehicle(
-            [Service] BlogDbContext context, Vehicle model)
+            [Service] BlogDbContext context, 
+            string make,
+            string model,
+            int year,
+            int capacity,
+            string licensePlate
+            )
         {
             var vehicle = new Vehicle
             {
-                Make = model.Make,
-                Model = model.Model,
-                Year = model.Year,
-                Capacity = model.Capacity,
-                LicensePlate = model.LicensePlate
+                Make = make,
+                Model = model,
+                Year = year,
+                Capacity = capacity,
+                LicensePlate = licensePlate
             };
             context.Vehicles.Add(vehicle);
             await context.SaveChangesAsync();
-            return model;
+            return vehicle;
         }
 
 
@@ -190,21 +205,29 @@ namespace practiseGraphQl.Data
 
         [Serial]
         public async Task<Waybill?> InsertWaybill(
-            [Service] BlogDbContext context, Waybill model)
+            [Service] BlogDbContext context, 
+            DateTime date,
+            long clientId,
+            long vehicleId,
+            long driverId,
+            string routeStart,
+            string routeEnd,
+            decimal distance
+            )
         {
             var waybill = new Waybill
             {
-                Date = model.Date,
-                ClientId = model.ClientId,
-                VehicleId = model.VehicleId,
-                DriverId = model.DriverId,
-                RouteStart = model.RouteStart,
-                RouteEnd = model.RouteEnd,
-                Distance = model.Distance
+                Date = date,
+                ClientId = clientId,
+                VehicleId = vehicleId,
+                DriverId = driverId,
+                RouteStart = routeStart,
+                RouteEnd = routeEnd,
+                Distance = distance
             };
             context.Waybills.Add(waybill);
             await context.SaveChangesAsync();
-            return model;
+            return waybill;
         }
     }
 }
