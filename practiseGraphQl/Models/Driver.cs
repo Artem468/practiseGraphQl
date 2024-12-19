@@ -9,6 +9,6 @@ namespace practiseGraphQl.Models
         public long LicenseNumber { get; set; }
         public string Phone { get; set; }
         public DateTime DateOfHire { get; set; }
-        public ICollection<Waybill> Waybills { get; set; }
+        public ICollection<Waybill>? Waybills { get; set; }
     }
 }

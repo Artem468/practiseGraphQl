@@ -209,3 +209,4 @@ C:\Users\Artem\Desktop\projects\practiseGraphQl\practiseGraphQl\obj\Debug\net8.0
 C:\Users\Artem\Desktop\projects\practiseGraphQl\practiseGraphQl\obj\Debug\net8.0\practiseGraphQl.pdb
 C:\Users\Artem\Desktop\projects\practiseGraphQl\practiseGraphQl\obj\Debug\net8.0\practiseGraphQl.genruntimeconfig.cache
 C:\Users\Artem\Desktop\projects\practiseGraphQl\practiseGraphQl\obj\Debug\net8.0\ref\practiseGraphQl.dll
+C:\Users\Artem\Desktop\projects\practiseGraphQl\practiseGraphQl\obj\Debug\net8.0\practiseGraphQl.sourcelink.json

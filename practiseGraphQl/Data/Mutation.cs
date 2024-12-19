@@ -43,7 +43,14 @@ namespace practiseGraphQl.Data
         public async Task<Client?> InsertClient(
             [Service] BlogDbContext context, Client model)
         {
-            context.Clients.Add(model);
+            var client = new Client
+            {
+                Name = model.Name,
+                Address = model.Address,
+                Phone = model.Phone,
+                Email = model.Email
+            };
+            context.Clients.Add(client);
             await context.SaveChangesAsync();
             return model;
         }
@@ -83,7 +90,14 @@ namespace practiseGraphQl.Data
         public async Task<Driver?> InsertDriver(
             [Service] BlogDbContext context, Driver model)
         {
-            context.Drivers.Add(model);
+            var driver = new Driver
+            {
+                Name = model.Name,
+                LicenseNumber = model.LicenseNumber,
+                Phone = model.Phone,
+                DateOfHire = model.DateOfHire
+            };
+            context.Drivers.Add(driver);
             await context.SaveChangesAsync();
             return model;
         }
@@ -126,7 +140,15 @@ namespace practiseGraphQl.Data
         public async Task<Vehicle?> InsertVehicle(
             [Service] BlogDbContext context, Vehicle model)
         {
-            context.Vehicles.Add(model);
+            var vehicle = new Vehicle
+            {
+                Make = model.Make,
+                Model = model.Model,
+                Year = model.Year,
+                Capacity = model.Capacity,
+                LicensePlate = model.LicensePlate
+            };
+            context.Vehicles.Add(vehicle);
             await context.SaveChangesAsync();
             return model;
         }
@@ -170,7 +192,17 @@ namespace practiseGraphQl.Data
         public async Task<Waybill?> InsertWaybill(
             [Service] BlogDbContext context, Waybill model)
         {
-            context.Waybills.Add(model);
+            var waybill = new Waybill
+            {
+                Date = model.Date,
+                ClientId = model.ClientId,
+                VehicleId = model.VehicleId,
+                DriverId = model.DriverId,
+                RouteStart = model.RouteStart,
+                RouteEnd = model.RouteEnd,
+                Distance = model.Distance
+            };
+            context.Waybills.Add(waybill);
             await context.SaveChangesAsync();
             return model;
         }
