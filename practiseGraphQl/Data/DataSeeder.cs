@@ -34,7 +34,8 @@ namespace practiseGraphQl.Data
                         Model = Lorem.GetFirstWord(),
                         Year = RandomNumber.Next(1980, 2024),
                         Capacity = RandomNumber.Next(100, 1000),
-                        LicensePlate = Lorem.GetFirstWord()
+                        LicensePlate = Lorem.GetFirstWord(),
+                        FuelRate = RandomNumber.Next(10, 50),
                     };
                     db.Vehicles.Add(vehicle);
                 }

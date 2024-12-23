@@ -126,6 +126,7 @@ namespace practiseGraphQl.Data
                     vehicle.LicensePlate = model.LicensePlate;
                 vehicle.Year = model.Year;
                 vehicle.Capacity = model.Capacity;
+                vehicle.FuelRate = model.FuelRate;
                 context.Vehicles.Update(vehicle);
                 await context.SaveChangesAsync();
             }
@@ -152,7 +153,8 @@ namespace practiseGraphQl.Data
             string model,
             int year,
             int capacity,
-            string licensePlate
+            string licensePlate,
+            int fuelRate
             )
         {
             var vehicle = new Vehicle
@@ -161,7 +163,8 @@ namespace practiseGraphQl.Data
                 Model = model,
                 Year = year,
                 Capacity = capacity,
-                LicensePlate = licensePlate
+                LicensePlate = licensePlate,
+                FuelRate = fuelRate
             };
             context.Vehicles.Add(vehicle);
             await context.SaveChangesAsync();

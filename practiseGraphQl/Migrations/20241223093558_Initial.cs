@@ -53,7 +53,8 @@ namespace practiseGraphQl.Migrations
                     Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     Capacity = table.Column<int>(type: "int", nullable: false),
-                    LicensePlate = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    LicensePlate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FuelRate = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
