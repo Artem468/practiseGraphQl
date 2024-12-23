@@ -209,7 +209,7 @@ namespace practiseGraphQl.Data
         [Serial]
         public async Task<Waybill?> InsertWaybill(
             [Service] BlogDbContext context, 
-            DateTime date,
+            string date,
             long clientId,
             long vehicleId,
             long driverId,
@@ -220,7 +220,7 @@ namespace practiseGraphQl.Data
         {
             var waybill = new Waybill
             {
-                Date = date,
+                Date = DateTime.Parse(date),
                 ClientId = clientId,
                 VehicleId = vehicleId,
                 DriverId = driverId,

@@ -13,7 +13,7 @@ builder.Services.AddScoped<IClientRepository, ClientRepository>();
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<IDriverRepository, DriverRepository>();
 builder.Services.AddScoped<IWaybillRepository, WaybillRepository>();
-builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections().AddSorting().AddFiltering();
+builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections().AddSorting().AddFiltering().AddMutationType<Mutation>();
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
