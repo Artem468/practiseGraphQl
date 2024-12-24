@@ -30,11 +30,11 @@ namespace practiseGraphQl.Data
                 {
                     var vehicle = new Vehicle
                     {
-                        Make = Lorem.GetFirstWord(),
-                        Model = Lorem.GetFirstWord(),
+                        Make = Lorem.Words(1).First(),
+                        Model = Lorem.Words(1).First(),
                         Year = RandomNumber.Next(1980, 2024),
                         Capacity = RandomNumber.Next(100, 1000),
-                        LicensePlate = Lorem.GetFirstWord(),
+                        LicensePlate = Lorem.Words(1).First(),
                         FuelRate = RandomNumber.Next(10, 50),
                     };
                     db.Vehicles.Add(vehicle);
